@@ -19,11 +19,21 @@ public class CompareUsingComparable {
 		ar.add(new Student(101, "Aggarwal", "Hongkong"));
 		ar.add(new Student(100, "Zelensky", "Hongkong"));
 		ar.add(new Student(100, "Zelenskys", "Hongkong"));
-
+		
+		
+		
+		Student std1 = new Student(233,  "Putin", "Moscow");
+		
+		Student std2=std1;
+		System.out.println(std2);
+		
+		std1.setAddress("Chennai");
+		System.out.println(std2);
 		
 		Collections.sort(ar);
 		
 		ar.forEach(System.out::println);
+		
 		
 //		Collections.sort(ar , new Comparator<Student>() {
 //

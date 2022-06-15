@@ -1,10 +1,16 @@
 package com.training.compareinjava;
 
-public class Student implements Comparable<Student> {
+import java.util.Comparator;
+
+public class Student implements Comparable<Student>, Comparator<Student> {
 
 	int rollno;
 	String name, address;
 
+	public Student() {
+		
+	}
+	
 	public Student(int rollno, String name, String address) {
 
 		this.rollno = rollno;
@@ -41,12 +47,24 @@ public class Student implements Comparable<Student> {
 		this.address = address;
 	}
 
+//	@Override
+//	public int compareTo(Student std1) {
+//
+//		return this.getRollno()>std1.getRollno()? 1 :-1;
+//		
+//	}
+	
 	@Override
-	public int compareTo(Student std1) {
+	public int compareTo(Student std2) {
 
-		return this.getRollno()>std1.getRollno()? 1 :-1;
+		return (this.getName().compareTo(std2.getName())>0  ? 1: -1); 
 		
 	}
+
+@Override
+public int compare(Student o1, Student o2) {
+	return o1.getRollno()>o2.getRollno()? 1 :-1;
+}
 
 	
 
